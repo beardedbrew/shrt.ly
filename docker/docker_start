@@ -1,0 +1,5 @@
+#!/bin/bash
+# Stop and remove all containers
+/vagrant/docker/docker_clean
+# Start MongoDB
+docker run -p 3306:3306 --name shrtly-mysql -e MYSQL_ROOT_PASSWORD=mys3cr3tsw0rd -e MYSQL_DATABASE=shrtly -e MYSQL_USER=shrtly_user -e MYSQL_PASSWORD=#sh1rtl3ss! -d centurylink/mysql
