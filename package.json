@@ -1,0 +1,29 @@
+{
+  "name": "shrt.ly",
+  "version": "0.0.1",
+  "description": "Shortened Campaign URLs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "make test"
+  },
+  "keywords": [
+    "api",
+    "service",
+    "research",
+    "solutions"
+  ],
+  "authors": [
+    "Jonathan.Griggs@Ombud.com",
+    "Tim.Myers@Ombud.com",
+    "Andrew.Doppler@Ombud.com"
+  ],
+  "devDependencies": {
+    "mocha": "~1.17.1",
+    "should": "~3.1.2",
+    "supertest": "~0.9.0"
+  },
+  "dependencies": {
+    "express": "~4.9.0"
+  }
+}
