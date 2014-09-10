@@ -27,11 +27,11 @@ app.post('/shrts', function(req, res, next) {
   var result = _.find(shrts, function(s) { return s.hash_code == hash_code });
 
   if (!result) {
-    result = result = shrt.create(data.url);
+    result = shrt.create(data.url);
+    shrts.push(result);
   };
 
   if (result && result.hash_code) {
-    shrts.push(result);
     res.send(result);
   } else {
     response.send(400);
@@ -40,7 +40,6 @@ app.post('/shrts', function(req, res, next) {
 
 app.get('/r/:hash_code', function(req, res, next)  {
   var hash_code = req.param('hash_code');
-  console.log('got', hash_code, shrts);
   var shrt = _.find(shrts, function(s) { return s.hash_code == hash_code });
   if (shrt) {
     shrt.clicks++;

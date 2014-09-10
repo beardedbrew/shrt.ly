@@ -10,7 +10,13 @@ var ViewModel = function() {
       data: JSON.stringify({ url: $(form.url).val() }),
       contentType: 'application/json',
       success: function(data, textStatus, jqXHR) {
-        self.shrts.push(data);
+        var i =_.findIndex(self.shrts(), function(s) { return s.hash_code == data.hash_code });
+
+        if (i > -1) {
+          self.shrts.splice(i, 1, data);
+        } else {
+          self.shrts.push(data);
+        }
         form.reset();
       },
     });
