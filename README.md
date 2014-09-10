@@ -42,7 +42,7 @@ vagrant up
 npm install  
 npm start  
 
-**MySQL Information**
+**MySQL Information**  
 IP:192.168.61.101  
 Port: 3306  
 Username: shrtly_user  
