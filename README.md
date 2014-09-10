@@ -13,7 +13,7 @@ At AppCorp, we recently released our new link shortner internally. But there see
 
 ***
 
-**But there seems to be some problems :( **
+**But there seems to be some problems :(**
 
 * URLS are not saving is our first problem
 * We've also had issues with redirects not working
