@@ -5,7 +5,7 @@ var db = require('../models');
 var _ = require('lodash');
 var ShortUrl = db.ShortUrl;
 var salt = "Shrt.ly Salt String"
-var hasher = new Hashids(salt, 8, "bcdfghjklmnpqrstvwxyz❀❃❆❇❊❋%/⌿#⌗");
+var hasher = new Hashids(salt, 8, "b❀c❃d❆f∅g❇h❊j/k⌗l#m%n⟁pπq♠r♣s♥t♦vµw❋x⚐y∑z♫");
 
 
 module.exports = function(app) {
