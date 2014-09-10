@@ -4,7 +4,7 @@ var fs        = require('fs')
   , _    = require('lodash')
   , sequelize = new Sequelize('shrtly', 'shrtly_user', '#sh1rtl3ss!', {
     port: 3306,
-    host: '192.168.61.100'
+    host: '192.168.61.101'
   })
   , db        = {}
 
