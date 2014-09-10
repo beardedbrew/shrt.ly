@@ -9,7 +9,7 @@ var express = require('express')
 
 // Return all the shortened urls
 function list(req, res, next) {
-  ShortUrl.findAll().success(function(results) {
+  ShortUrl.findAll({ order: 'id ASC' }).success(function(results) {
     var list = _.map(results, function(s) {
       var values = s.dataValues;
       values.hash_code = hasher.encode(s.id);
