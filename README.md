@@ -2,7 +2,7 @@ Shrtn.ly
 ============
 ## Overview
 ***
-At AppCorp, we recently released our new link shortner internally. But there seems to be some problems.
+At AppCorp, we're trying to build our own url shortener.
 
 **Here is how we wanted it to work.**
 
@@ -15,8 +15,8 @@ At AppCorp, we recently released our new link shortner internally. But there see
 
 **But there seems to be some problems :(**
 
-* URLS are not saving is our first problem
-* We've also had issues with redirects not working
+* URLs don't seem to be saving anymore
+* Saved URLs don't always work
 
 **We are hoping you can fix these issues and get Shrtn back to normal**
 
@@ -24,10 +24,11 @@ At AppCorp, we recently released our new link shortner internally. But there see
 
 **New Functionality**
 
-We know it's early to talk about new functionality since the app is broken, but if fixed here is what we'd like to see.
+We know it's early to talk about new functionality since the app is broken, but if you have some time after fixing it we'd love to see:
 
 * Better stack tracking per each link click (ip address, date, browser)
 * A better design (so boring right now)
+* Another fun feature of your choice
 
 ***
 
