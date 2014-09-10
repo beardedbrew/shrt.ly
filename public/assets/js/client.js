@@ -1,3 +1,11 @@
+var Shirt = function(data) {
+  this.url = data.url;
+  this.hits = data.hits;
+  this.hash_code = data.hash_code;
+
+  return this;
+}
+
 var ViewModel = function() {
   var self = this;
 
@@ -10,21 +18,15 @@ var ViewModel = function() {
       data: JSON.stringify({ url: $(form.url).val() }),
       contentType: 'application/json',
       success: function(data, textStatus, jqXHR) {
-        var i =_.findIndex(self.shrts(), function(s) { return s.hash_code == data.hash_code });
-
-        if (i > -1) {
-          self.shrts.splice(i, 1, data);
-        } else {
-          self.shrts.push(data);
-        }
+        self.shrts.push(new Shirt(data));
         form.reset();
       },
     });
   };
 
   this.setData = function(data) {
-    data.forEach(function(d, i) {
-      self.shrts.push(d);
+    data.forEach(function(d) {
+      self.shrts.push(new Shirt(d));
     });
   };
 
