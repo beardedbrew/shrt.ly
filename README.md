@@ -34,20 +34,30 @@ We know it's early to talk about new functionality since the app is broken, but 
 
 **Getting Started**
 
-The goal of this test, is for you to fix an existing app and make it even better.  
+The goal of this test, is for you to fix an existing app and make it even better.
 
-The app is built using NodeJS, Express, Knockoutjs, HTML5 and CSS.  
+The app is built using NodeJS, Express, Knockoutjs, HTML5 and CSS.
 
 We've provided a vagrant box for your convenience. Once you have [Vagrant](http://www.vagrantup.com/) and [node](http://nodejs.org/) installed, run:
 
-vagrant up  
-npm install  
-npm start  
+```
+vagrant up
+npm install
+npm start
+```
 
-Once up visit ->  http://localhost:3000  
+Once up visit -> http://localhost:3000 in your favorite browser
 
-**MySQL Information**  
-IP:192.168.61.101  
-Port: 3306  
-Username: shrtly_user  
-Password: #sh1rtl3ss!  
+**Help**
+
+If you make changes to the node app, you'll need to restart the server.
+
+Should you need to connect directly to mysql, here are the credentials for the vagrant box:
+```
+IP: 192.168.61.101
+Port: 3306
+Username: shrtly_user
+Password: #sh1rtl3ss!
+```
+
+If you have any questions or need more clarification, please don't hesitate to ask!
