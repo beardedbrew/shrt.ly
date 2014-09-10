@@ -1,18 +1,13 @@
 var express = require('express');
 var path = require('path');
-var app = express();
+var app = module.exports = express();
 var db = require('./models');
+var initializeRoutes = require('./routes');
 
 app.set('port', process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.get('/', function(req,res,next){
   res.render('index');
-});
-
-app.get('/:hash_code', function(req,res,next){
- var hash_code = req.param('hash_code');
- res.send(hash_code);
 });
 
 function initDb(callback) {
@@ -42,4 +37,5 @@ function initServer(app) {
   });
 }
 
+initializeRoutes(app);
 initServer(app);
