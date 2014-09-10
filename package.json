@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "express": "~4.9.0",
+    "body-parser": "~1.8.1",
     "mysql": "~2.5.0",
     "sequelize": "~1.7.10",
     "lodash": "~2.4.1",
