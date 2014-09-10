@@ -1,11 +1,13 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+var _ = require('lodash');
 
 var app = express();
 var shrt = require('./shrt');
 
 var shrts = [];
+var db = require('./models');
 
 app.set('port', process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, 'public')));
@@ -21,7 +23,13 @@ app.get('/shrts', function(req, res, next) {
 
 app.post('/shrts', function(req, res, next) {
   var data = req.body || {};
-  var result = shrt.create(data.url);
+  var hash_code = shrt.getCode(data.url);
+  var result = _.find(shrts, function(s) { return s.hash_code == hash_code });
+
+  if (!result) {
+    result = result = shrt.create(data.url);
+  };
+
   if (result && result.hash_code) {
     shrts.push(result);
     res.send(result);
@@ -32,15 +40,41 @@ app.post('/shrts', function(req, res, next) {
 
 app.get('/r/:hash_code', function(req, res, next)  {
   var hash_code = req.param('hash_code');
-  res.redirect('/shrt/' + hash_code);
+  console.log('got', hash_code, shrts);
+  var shrt = _.find(shrts, function(s) { return s.hash_code == hash_code });
+  if (shrt) {
+    shrt.clicks++;
+    res.redirect(shrt.url);
+  } else {
+    res.redirect('/');
+  }
 });
 
-app.get('/shrt/:hash_code', function(req, res, next)  {
-  var hash_code = req.param('hash_code');
-  res.send('Redirected to ' + hash_code);
-});
+function initDb(callback) {
+  db
+    .sequelize
+    .sync({ force: true })
+    .complete(function(err) {
 
-// Start Server
-app.listen(app.get('port'),function() {
-  console.log('shrt.ly listening on port ' + app.get('port'));
-});
+      if (err) {
+        callback(err[0]);
+      } else {
+        callback();
+      }
+    })
+}
+
+function initServer(app) {
+  initDb(function(error){
+    if(error)
+      throw error
+    else {
+      // Start Server
+      app.listen(app.get('port'),function() {
+        console.log('shrt.ly listening on port ' + app.get('port'));
+      });
+    }
+  });
+}
+
+initServer(app);
