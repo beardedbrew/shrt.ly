@@ -36,6 +36,6 @@ We know it's early to talk about new functionality since the app is broken, but 
 
 We've provided a vagrant box for your convenience. Once you have [Vagrant](http://www.vagrantup.com/) and [node](http://nodejs.org/) installed, run:
 
-vagrant up
-npm install
-npm start
+vagrant up  
+npm install  
+npm start  
