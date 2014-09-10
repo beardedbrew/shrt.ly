@@ -14,7 +14,6 @@ var ViewModel = function() {
   this.addShrt = function(form) {
     $.ajax({
       url: '/api/shrts',
-      type: 'POST',
       data: JSON.stringify({ url: $(form.url).val() }),
       contentType: 'application/json',
       success: function(data, textStatus, jqXHR) {
