@@ -7,13 +7,13 @@ var agent = request.agent(express);
 
 describe('Shrt.ly API', function () {
   var api_endpoint = '/api'
-  describe(api_endpoint + '/shorten', function () {
-    var endpoint = api_endpoint + '/shorten';
+  describe(api_endpoint + '/shrts', function () {
+    var endpoint = api_endpoint + '/shrts';
     describe('GET', function () {
-      it("should return a 501 Unsupported", function(done){
+      it("should return a list of urls", function(done){
         agent
           .get(endpoint)
-          .expect(501)
+          .expect(200)
           .end(done)
       });
     });
@@ -49,9 +49,7 @@ describe('Shrt.ly API', function () {
             var ret = res.body;
             ret.should.have.property('url');
             ret.url.should.eql(payload.url);
-            ret.should.have.property('short_url');
-            ret.short_url.should.not.eql(payload.url);
-            console.log(ret.short_url)
+            ret.should.have.property('hash_code');
             done();
           });
       });
