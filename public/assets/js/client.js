@@ -5,7 +5,7 @@ var ViewModel = function() {
 
   this.addShrt = function(form) {
     $.ajax({
-      url: '/shrts',
+      url: '/api/shrts',
       type: 'POST',
       data: JSON.stringify({ url: $(form.url).val() }),
       contentType: 'application/json',
@@ -34,7 +34,7 @@ var ViewModel = function() {
 $(function() {
   var model = new ViewModel();
 
-  $.get('/shrts', function(data, textStatus, jqXHR) {
+  $.get('/api/shrts', function(data, textStatus, jqXHR) {
     if (jqXHR.status == 200) {
       model.setData(data);
       ko.applyBindings(model);
