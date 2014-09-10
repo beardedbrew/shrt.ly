@@ -35,7 +35,7 @@ We know it's early to talk about new functionality since the app is broken, but 
 **Getting Started**
 
 * The goal of this project is to fix our app and make it better
-* Please document any issue you fine and how you fixed it
+* Please document any issues you find and how you fixed them
 
 The app is built using NodeJS, Express, Knockoutjs, HTML5 and CSS.
 
