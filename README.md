@@ -34,8 +34,16 @@ We know it's early to talk about new functionality since the app is broken, but 
 
 **Getting Started**
 
+This app is built using NodeJS, Express, Knockoutjs, HTML5 and CSS
+
 We've provided a vagrant box for your convenience. Once you have [Vagrant](http://www.vagrantup.com/) and [node](http://nodejs.org/) installed, run:
 
 vagrant up  
 npm install  
 npm start  
+
+**MySQL Information**
+IP:
+Port:
+Username:
+Password:
