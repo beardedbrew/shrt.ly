@@ -1,15 +1,17 @@
 var fs        = require('fs')
+  , _         = require('lodash')
   , path      = require('path')
   , Sequelize = require('sequelize')
-  , _    = require('lodash')
-  , sequelize = new Sequelize('shrtly', 'shrtly_user', '#sh1rtl3ss!', {
-    port: 3306,
-    host: '192.168.61.101'
-  })
-  , db        = {}
+  , db = {}
 
-fs
-  .readdirSync(__dirname)
+// Setup database connection
+var sequelize = new Sequelize('shrtly', 'shrtly_user', '#sh1rtl3ss!', {
+  port: 3306,
+  host: '192.168.61.101'
+})
+
+// Load models
+fs.readdirSync(__dirname)
   .filter(function(file) {
     return (file.indexOf('.') !== 0) && (file !== 'index.js')
   })
