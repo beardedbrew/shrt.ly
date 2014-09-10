@@ -25,7 +25,7 @@ var ViewModel = function() {
 
   this.setData = function(data) {
     data.forEach(function(d) {
-      self.shrts.push(new Shirt(d));
+      self.shrts.unshift(new Shirt(d));
     });
   };
 
