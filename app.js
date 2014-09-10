@@ -71,7 +71,7 @@ function initServer(app) {
     else {
       // Start Server
       app.listen(app.get('port'),function() {
-        console.log('shrt.ly listening on port ' + app.get('port'));
+        console.log('shrtn.ly listening on port ' + app.get('port'));
       });
     }
   });

@@ -5,3 +5,4 @@ scripts/*.json
 insecure_key
 data/*
 tmp/*
+.DS_Store
