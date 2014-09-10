@@ -2,7 +2,7 @@ Shrtn.ly
 ============
 ## Overview
 ***
-At AppCorp, we recently released our new link shortner internally. But there seems to be some problems. 
+At AppCorp, we recently released our new link shortner internally. But there seems to be some problems.
 
 **Here is how we wanted it to work.**
 
@@ -29,3 +29,12 @@ We know it's early to talk about new functionality since the app is broken, but 
 * Better stack tracking per each link click (ip address, date, browser)
 * A better design (so boring right now)
 
+***
+
+**Getting Started**
+
+We've provided a vagrant box for your convenience. Once you have [Vagrant](http://www.vagrantup.com/) and [node](http://nodejs.org/) installed, run:
+
+vagrant up
+npm install
+npm start
