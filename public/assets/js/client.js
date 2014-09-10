@@ -17,7 +17,7 @@ var ViewModel = function() {
       data: JSON.stringify({ url: $(form.url).val() }),
       contentType: 'application/json',
       success: function(data, textStatus, jqXHR) {
-        self.shrts.push(new Shirt(data));
+        self.shrts.unshift(new Shirt(data));
         form.reset();
       },
     });
