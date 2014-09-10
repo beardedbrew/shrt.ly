@@ -43,7 +43,7 @@ npm install
 npm start  
 
 **MySQL Information**
-IP:
-Port:
-Username:
-Password:
+IP:192.168.61.101  
+Port: 3306  
+Username: shrtly_user  
+Password: #sh1rtl3ss!  
